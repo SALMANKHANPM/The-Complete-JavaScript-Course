@@ -119,3 +119,49 @@ console.log(x, y);
 const averageAge = (ageAakash + ageDimple) / 2;
 console.log(ageAakash, ageDimple, averageAge);
 */
+
+//============= STRINGS & TEMPLATE LITERALS =============
+/*
+const firstName = "Aakash";
+const job = "Freelancer & Student";
+const birthYear = 2003;
+const year = 2022;
+
+const aakash = "I'm " + firstName + ", a " + (year - birthYear) + " year old student currently learning JavaScript";
+console.log(aakash);
+
+const aakashNew = `I'm ${firstName}, a ${year - birthYear} year old student currently learning JavaScript.`;
+console.log(aakashNew);
+
+console.log(`Just a regular string...`);
+
+console.log("String with \n\
+multiple \n\
+lines...");
+
+console.log(`Another multi line
+string with much
+simpler template literal`);
+*/
+
+//============= TAKING DECISIONS IF/ELSE STATEMENTS =============
+/*
+const age = 15;
+const isOldEnough = age >= 18;
+
+if (isOldEnough) {
+  console.log("Dimple can start driving license 🚗");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Dimple can start driving license after ${yearsLeft} years 🥲`);
+}
+
+const birthYear = 2003;
+let century;
+
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+*/
