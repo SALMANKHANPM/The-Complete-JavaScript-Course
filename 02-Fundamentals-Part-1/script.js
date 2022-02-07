@@ -102,3 +102,20 @@ console.log(ageDimple >= 18);
 const isFullAge = ageDimple >= 18;
 console.log(now - 2003 > now - 2002);
 */
+
+//============= OPERATOR PRECEDENCE =============
+/*
+const now = 2022;
+const ageAakash = now - 2003;
+const ageDimple = now - 2002;
+
+console.log(now - 1991 > now - 2018);
+console.log(25 - 10 - 5);
+
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10, x = 10
+console.log(x, y);
+
+const averageAge = (ageAakash + ageDimple) / 2;
+console.log(ageAakash, ageDimple, averageAge);
+*/
