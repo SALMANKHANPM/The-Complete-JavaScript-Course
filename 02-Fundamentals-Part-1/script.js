@@ -62,3 +62,43 @@ console.log(typeof null);
 */
 
 //============= LET, CONST & VAR =============
+/*
+let age = 30;
+age = 31;
+
+const birthYear = 2003;
+// birthYear = 1990;
+
+var job = "Programmer";
+job = "Freelancer";
+*/
+
+//============= BASIC OPERATORS =============
+/*
+const now = 2022;
+
+// Math Operators
+const ageAakash = now - 2003;
+const ageDimple = now - 2002;
+console.log(ageAakash, ageDimple);
+console.log(ageAakash * 2, ageDimple / 2, 2 ** 3);
+// 2**3 means 2 to the power 3 = 2*2*2 = 8
+const firstName = "Aakash";
+const lastName = "Rao";
+console.log(firstName + " " + lastName);
+
+// Assignment Operators
+let x = 10 + 5; // 15
+x += 10; // x = x + 10
+x *= 4; // x = x * 4
+x++; // x = x + 1
+x--; // x = x - 1
+x--; // x = x - 1
+console.log(x);
+
+// Comparison Operators
+console.log(ageAakash > ageDimple);
+console.log(ageDimple >= 18);
+const isFullAge = ageDimple >= 18;
+console.log(now - 2003 > now - 2002);
+*/
