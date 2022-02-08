@@ -29,8 +29,7 @@ console.log(myFirstJob);
 
 //============= DATA TYPES =============
 /*
-? In JavaScript every value is either object or a Primitive Value.
-
+! In JavaScript every value is either object or a Primitive Value.
 * THE SEVEN PRIMITIVE DATA TYPES
 - Number
 - Strings
@@ -163,5 +162,94 @@ if (birthYear <= 2000) {
   century = 20;
 } else {
   century = 21;
+}
+*/
+
+//============= TYPE CONVERSION & TYPE COERCION =============
+/*
+* Type Conversion [Explicity changing the data type]
+const inputYear = "2003";
+console.log(Number(inputYear), inputYear);
+console.log(inputYear + 18);
+console.log(Number("Jonas")); // NaN === invalid number
+console.log(typeof NaN);
+console.log(String(23), 23);
+
+* Type Coercion [JavaScript do it automatically for us]
+console.log("I'm " + 19 + " years old student.");
+console.log("23" - "10" - "3");
+console.log("23" / "2");
+console.log("23" > "18");
+*/
+
+//============= TRUTHY & FALSY VALUES =============
+/*
+ * 5 FALSY VALUES ' ', 0, undefined, null, Nan
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean("Aakash"));
+console.log(Boolean({}));
+console.log(Boolean(""));
+
+const money = 0;
+if (money) console.log("Don't spend it all.");
+else console.log("You should better get a Job!");
+
+let height;
+if (height) {
+  console.log("Yay! height is defined");
+} else {
+  console.log("height is undefined");
+}
+*/
+
+//============= EQUALITY OPERATORS == vs === =============
+/*
+const age = "18";
+
+if (age === 18) console.log("You just became an adult (strict).");
+if (age == 18) console.log("You just became an adult (loose).");
+
+const favorite = Number(prompt(`what's your favorite number?`));
+console.log(favorite);
+console.log(typeof favorite);
+
+if (favorite === 23) {
+  // 23 === 23
+  console.log("Cool! 23 is an amazing number.");
+} else if (favorite === 7) {
+  console.log("7 is also a good number");
+} else if (favorite === 9) {
+  console.log("9 is also a cool number");
+} else {
+  console.log("Number is not 23 nor 7 ☹️");
+}
+
+if (favorite !== 23) console.log("Why not 23?");
+*/
+
+//============= LOGICAL OPERATORS =============
+/*
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+if (hasDriversLicense && hasGoodVision) {
+  console.log(`Dimple is able to drive.`);
+} else {
+  console.log(`Someone else should drive.`);
+}
+
+const isTired = true; // C
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+  console.log(`Dimple is able to drive.`);
+} else {
+  console.log(`Someone else should drive.`);
 }
 */
