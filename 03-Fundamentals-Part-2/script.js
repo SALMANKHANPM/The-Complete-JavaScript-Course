@@ -144,6 +144,7 @@ console.log(ages);
 */
 
 //================== BASIC ARRAY OPERATIONS (METHODS):- ==================
+/*
 const friends = ["Micheal", "Steven", "Peter"];
 
 // ADD ELEMENTS
@@ -168,3 +169,4 @@ console.log(friends.includes("Bob"));
 if (friends.includes("Steven")) {
   console.log("You have a friend called Steven.");
 }
+*/
