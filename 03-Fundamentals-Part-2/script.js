@@ -142,3 +142,29 @@ console.log(age1, age2, age3);
 const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
 console.log(ages);
 */
+
+//================== BASIC ARRAY OPERATIONS (METHODS):- ==================
+const friends = ["Micheal", "Steven", "Peter"];
+
+// ADD ELEMENTS
+const newLength = friends.push("Jay"); // add element at the end of array & returns the length of the array
+console.log(friends);
+console.log(newLength);
+friends.unshift("John"); // add element at the beginning of array & returns the length of the array
+console.log(friends);
+
+// REMOVE ELEMENTS
+friends.pop(); // Remove last element of the array & returns the removed element
+console.log(friends);
+friends.shift(); // Remove first element of the array & returns the removed element
+console.log(friends);
+
+console.log(friends.indexOf("Steven")); // returns the index value in an array
+console.log(friends.indexOf("Bob"));
+
+console.log(friends.includes("Steven")); // returns boolean if the element is present or not in an array
+console.log(friends.includes("Bob"));
+
+if (friends.includes("Steven")) {
+  console.log("You have a friend called Steven.");
+}
