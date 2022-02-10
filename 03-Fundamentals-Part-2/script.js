@@ -186,7 +186,7 @@ console.log(aakash);
 */
 
 //================== DOT VS BRACKET NOTATION:- ==================
-
+/*
 const aakash = {
   firstName: "Aakash",
   lastName: "Rao",
@@ -210,3 +210,47 @@ console.log(aakash[interestedIn]);
 if (aakash[interestedIn]) {
   console.log(aakash.interestedIn);
 }
+*/
+
+//================== OBJECT METHODS:- ==================
+/*
+// ANY FUNCTION THAT IS ATTACHED TO AN OBJECT IS CALLED A METHOD.
+
+const aakash = {
+  firstName: "Aakash",
+  lastName: "Rao",
+  birthYear: 2003,
+  job: "Student",
+  friends: ["Micheal", "Peter", "Steven"],
+  hasDriverLicense: false,
+
+  // calcAge: function (birthYear) {
+  //   return 2022 - 2003;
+  // },
+
+  // calcAge: function () {
+  //   console.log(this);
+  //   return 2022 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2022 - this.birthYear;
+    return this.age;
+  },
+
+  // Challenge
+  // "Aakash is a 18-year old student, and he has a/no driver's license."
+  getSummary: function () {
+    this.summary = `${this.firstName} is a ${this.age}-year old ${this.job}, and he has ${
+      this.hasDriverLicense ? "a" : "no"
+    } driver's License.`;
+    return this.summary;
+  },
+};
+
+console.log(aakash.calcAge());
+console.log(aakash.age);
+// console.log(aakash["calcAge"](2003));
+
+console.log(aakash.getSummary());
+*/
