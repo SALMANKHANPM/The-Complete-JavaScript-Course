@@ -170,3 +170,43 @@ if (friends.includes("Steven")) {
   console.log("You have a friend called Steven.");
 }
 */
+
+//================== INTRODUCTION TO OBJECTS:- ==================
+
+/* 
+// OBJECT LITERAL SYNTAX
+const aakash = {
+  firstName: "Aakash",
+  lastName: "Rao",
+  age: 2022 - 2003,
+  job: "Student",
+  friends: ["Micheal", "Peter", "Steven"],
+};
+console.log(aakash);
+*/
+
+//================== DOT VS BRACKET NOTATION:- ==================
+
+const aakash = {
+  firstName: "Aakash",
+  lastName: "Rao",
+  age: 2022 - 2003,
+  job: "Student",
+  friends: ["Micheal", "Peter", "Steven"],
+};
+console.log(aakash);
+console.log(aakash["lastName"]); // Bracket notation [put any expression]
+console.log(aakash.lastName); // Dot notation
+
+const nameKey = "Name";
+console.log(aakash["first" + nameKey]);
+console.log(aakash["last" + nameKey]);
+
+// console.log(aakash."first" + nameKey);
+
+const interestedIn = prompt("What do you want to know about Aakash? Choose between firstName. lastName. age, job & friends");
+console.log(aakash[interestedIn]);
+
+if (aakash[interestedIn]) {
+  console.log(aakash.interestedIn);
+}
