@@ -309,3 +309,18 @@ for (let i = 0; i < aakash.length; i++) {
   console.log(aakash[i], typeof aakash[i]);
 }
 */
+
+//================== LOOPING BACKWARDS & LOOPS IN LOOPS ==================
+/*
+const aakash = ["Aakash", "Rao", 2022 - 2003, "Student", ["Micheal", "Peter", "Steven"]];
+for (let i = aakash.length - 1; i >= 0; i--) {
+  console.log(i, aakash[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`========== STARTING EXERCIESE ${exercise} ==========`);
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`LIFTING WEIGHT REPETITION ${rep} 🏋🏻`);
+  }
+}
+*/
