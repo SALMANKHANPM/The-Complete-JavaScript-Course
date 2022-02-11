@@ -254,3 +254,58 @@ console.log(aakash.age);
 
 console.log(aakash.getSummary());
 */
+
+//================== ITERATION: THE LOOPS [CONTROL-STRUCTURE: 2] ==================
+/*
+// console.log("Lifting weights repittion 1 🏋🏻");
+// console.log("Lifting weights repittion 2 🏋🏻");
+// console.log("Lifting weights repittion 3 🏋🏻");
+// console.log("Lifting weights repittion 4 🏋🏻");
+// console.log("Lifting weights repittion 5 🏋🏻");
+// console.log("Lifting weights repittion 6 🏋🏻");
+// console.log("Lifting weights repittion 7 🏋🏻");
+// console.log("Lifting weights repittion 8 🏋🏻");
+// console.log("Lifting weights repittion 9 🏋🏻");
+// console.log("Lifting weights repittion 10 🏋🏻");
+
+// counter -- logical condition -- update the counter
+for (let rep = 1; rep < 11; rep++) {
+  console.log(`Lifting weights repittion ${rep} 🏋🏻`);
+}
+*/
+
+//================== LOOPING ARRAYS, BREAKING & CONTINUING:- ==================
+/*
+const aakash = ["Aakash", "Rao", 2022 - 2003, "Student", ["Micheal", "Peter", "Steven"], true];
+const types = [];
+for (let i = 0; i < aakash.length; i++) {
+  // Reading from array
+  console.log(aakash[i], typeof aakash[i]);
+  // Filling types array
+  // types[i] = typeof aakash[i];
+  types.push(typeof aakash[i]);
+}
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+for (let i = 0; i < years.length; i++) {
+  ages.push(2022 - years[i]);
+}
+console.log(ages);
+
+// CONTINUE & BREAK
+// CONTINUE:- Continue is to exit the current iteration of the loop
+console.log("--- ONLY STRINGS ---");
+for (let i = 0; i < aakash.length; i++) {
+  if (typeof aakash[i] !== "string") continue;
+  console.log(aakash[i], typeof aakash[i]);
+}
+
+// BREAK:- Break is used to completly terminate the whole loop
+console.log("--- NUMBERS WITH NUMBER ---");
+for (let i = 0; i < aakash.length; i++) {
+  if (typeof aakash[i] === "number") break;
+  console.log(aakash[i], typeof aakash[i]);
+}
+*/
