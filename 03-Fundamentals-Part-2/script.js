@@ -324,3 +324,29 @@ for (let exercise = 1; exercise < 4; exercise++) {
   }
 }
 */
+
+//================== THE WHILE LOOP ==================
+/*
+// counter -- logical condition -- update the counter
+for (let rep = 1; rep < 11; rep++) {
+  console.log(`Lifting weights repittion ${rep} 🏋🏻`);
+}
+
+let rep = 1;
+while (rep < 11) {
+  console.log(`Lifting weights repition ${rep} WHILE LOOP`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+// Here the loop will continue to run until it reaches 6. As soon as it hit the 6 it will stop. Also we are updating the value of dice on each roll. But if it is 6 at the start it will not run it once.
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  console.log(dice);
+
+  if (dice === 6) console.log(`Loop is about to end...`);
+}
+*/
