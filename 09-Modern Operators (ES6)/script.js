@@ -335,3 +335,156 @@ add(...x); // unpack the values
 restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
 */
+
+//============ SHORT CIRCUITING (&& AND ||):- ============
+// Use ANY data type, return ANY Data type, short-circuiting.
+/*
+console.log('----------OR OPERATOR----------');
+
+const restaurant = {
+  name: 'Classico Italino',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  startMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+
+  // Object inside an object
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.startMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  // Passing an object to a function as a Parameter
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order Recieved!! ${this.startMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be deliverd to ${address} at ${time}.`
+    );
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your deleicious pasta with ${ing1}, ${ing2} & ${ing3}.`
+    );
+  },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+};
+
+// In OR OPERATOR:
+// 👉🏼 if both are false the last value is returned & if both are true 1st one is returned.
+// 👉🏼 And in bunch of true & false the first true value is gonna returned.
+// 👉🏼 It will return first truthy value of all the operands & simply last value if all of the operands are false.
+console.log(3 || 'Aakash');
+console.log('' || 'Aakash');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuests = 0;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+// In OR OPERATOR:
+// 👉🏼 if both are false the last value is returned & if both are true 1st one is returned.
+// 👉🏼 And in bunch of true & false the first true value is gonna returned.
+// 👉🏼 It will return first falsy value of all the operands are fasle & simply last value if all of the operands are true.
+console.log('----------AND OPERATOR----------');
+console.log(0 && 'Aakash');
+console.log(7 && 'Aakash');
+
+console.log('Hello' && 23 && null && 'Aakash');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+restaurant.orderPizza && restaurant.orderPizza('cheese', 'patties');
+*/
+
+//============ THE NULLISH COALESCING OPERATOR(??):- ============
+/*
+const restaurant = {
+  name: 'Classico Italino',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  startMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+
+  // Object inside an object
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.startMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  // Passing an object to a function as a Parameter
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order Recieved!! ${this.startMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be deliverd to ${address} at ${time}.`
+    );
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your deleicious pasta with ${ing1}, ${ing2} & ${ing3}.`
+    );
+  },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+};
+
+restaurant.numGuests = 0;
+
+// OR OPERATOR:-
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+// Nullish values: null & undefined (Not '' or 0)
+const guessCorrect = restaurant.numGuests ?? 10;
+console.log(guessCorrect);
+*/
