@@ -562,3 +562,63 @@ for (const [i, el] of menu.entries()) {
 }
 // console.log([...menu.entries()]);
 */
+
+//============ ENHANCED OBJECT LITERALS ============
+
+// Enhancements
+// 👉🏼 You don't need to right object.property: objectName; you can directly write objectName inside an object to copy it inside another object. Like this object { anotherObject, }
+// 👉🏼 You can remove function keyword & semicolon from object methods to write a function.
+// 👉🏼 We can also compute property names of an object
+
+const weekDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekDays[3]]: {
+    open: 12,
+    close: 22,
+  },
+
+  [weekDays[4]]: {
+    open: 11,
+    close: 23,
+  },
+
+  [`day-${2 + 4}`]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const restaurant = {
+  name: 'Classico Italino',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  startMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+
+  // openingHours: openingHours, -- Normal
+  // Now ES6 Enhanced object literal
+  openingHours,
+
+  order(starterIndex, mainIndex) {
+    return [this.startMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  // Passing an object to a function as a Parameter
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+    console.log(
+      `Order Recieved!! ${this.startMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be deliverd to ${address} at ${time}.`
+    );
+  },
+
+  orderPasta(ing1, ing2, ing3) {
+    console.log(
+      `Here is your deleicious pasta with ${ing1}, ${ing2} & ${ing3}.`
+    );
+  },
+
+  orderPizza(mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+};
