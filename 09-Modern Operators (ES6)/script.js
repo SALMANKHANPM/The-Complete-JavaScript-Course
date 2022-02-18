@@ -564,7 +564,7 @@ for (const [i, el] of menu.entries()) {
 */
 
 //============ ENHANCED OBJECT LITERALS ============
-
+/*
 // Enhancements
 // 👉🏼 You don't need to right object.property: objectName; you can directly write objectName inside an object to copy it inside another object. Like this object { anotherObject, }
 // 👉🏼 You can remove function keyword & semicolon from object methods to write a function.
@@ -622,3 +622,86 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+*/
+
+//============ OPTIONAL CHAINING (?.) :- ============
+/*
+const weekDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [weekDays[3]]: {
+    open: 12,
+    close: 22,
+  },
+
+  [weekDays[4]]: {
+    open: 11,
+    close: 23,
+  },
+
+  [weekDays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const restaurant = {
+  name: 'Classico Italino',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  startMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+
+  // openingHours: openingHours, -- Normal
+  // Now ES6 Enhanced object literal
+  openingHours,
+
+  order(starterIndex, mainIndex) {
+    return [this.startMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  // Passing an object to a function as a Parameter
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+    console.log(
+      `Order Recieved!! ${this.startMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be deliverd to ${address} at ${time}.`
+    );
+  },
+
+  orderPasta(ing1, ing2, ing3) {
+    console.log(
+      `Here is your deleicious pasta with ${ing1}, ${ing2} & ${ing3}.`
+    );
+  },
+
+  orderPizza(mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+};
+
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// WITH OPTIONAL CHAINING
+console.log(restaurant.openingHours.mon?.open); // only if the property before ?. exists then read the property after that. otherwise just return undefined
+
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed'; // === openingHours.mon
+  console.log(`On ${day}, we open at ${open}.`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'method does not exist');
+console.log(restaurant.orderRissoto?.(0, 1) ?? 'method does not exist');
+
+// Arrays
+const users = [];
+console.log(users[0]?.name ?? 'User array empty');
+// Normal method if we don't use optional chaining operator
+if (users.length > 0) console.log(users[0].name);
+else console.log('User array empty');
+*/
