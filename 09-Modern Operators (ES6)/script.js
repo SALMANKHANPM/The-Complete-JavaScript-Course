@@ -488,3 +488,77 @@ console.log(guests);
 const guessCorrect = restaurant.numGuests ?? 10;
 console.log(guessCorrect);
 */
+
+//============ THE FOR OF LOOP ============
+/*
+const restaurant = {
+  name: 'Classico Italino',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  startMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+
+  // Object inside an object
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.startMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  // Passing an object to a function as a Parameter
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order Recieved!! ${this.startMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be deliverd to ${address} at ${time}.`
+    );
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your deleicious pasta with ${ing1}, ${ing2} & ${ing3}.`
+    );
+  },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+};
+
+const menu = [...restaurant.startMenu, ...restaurant.mainMenu];
+
+// Normal For Loop
+console.log(`-------Normal For Loop-------`);
+for (let i = 0; i < menu.length; i++) {
+  console.log(`${[i + 1]}: ${menu[i]}`);
+}
+
+// For-of Loop
+console.log(`-------For-of Loop-------`);
+for (const item of menu) console.log(item);
+// here item is always the current element in each iteration
+
+// to print index with the values
+for (const [i, el] of menu.entries()) {
+  // console.log(item); // using this array & destructuring it in the next console.log
+  console.log(`${i + 1}: ${el}`);
+}
+// console.log([...menu.entries()]);
+*/

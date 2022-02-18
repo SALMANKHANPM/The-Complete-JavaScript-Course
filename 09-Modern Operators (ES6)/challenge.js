@@ -32,7 +32,7 @@ operator.
 Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.
 Then, call the function again with players from game.scored
 GOOD LUCK 😀
-*/
+
 
 const game = {
   team1: 'Bayern Munich',
@@ -116,3 +116,4 @@ printGoals(...game.scored);
 console.log('-----TASK-7-----');
 team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 1 is more likely to win');
+*/
