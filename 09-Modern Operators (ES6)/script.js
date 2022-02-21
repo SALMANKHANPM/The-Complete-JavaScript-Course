@@ -909,3 +909,42 @@ console.log([...question.entries()]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
 */
+
+//============ WORKING WITH STRINGS: PART 1 ============
+/*
+const airline = 'TATA Vistara';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log(plane[3]);
+
+console.log(airline.length);
+console.log('B373'.length);
+
+console.log(airline.indexOf('a'));
+console.log(airline.lastIndexOf('a'));
+console.log(airline.lastIndexOf('Vistara'));
+
+console.log(airline.slice(8));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' '))); // to get the first parameter without knowing it's index
+console.log(airline.slice(airline.lastIndexOf(' '))); // to get the last parameter without knowing it's index
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B & E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat 🙄');
+  } else console.log('You got lucky 😊');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+*/
