@@ -283,3 +283,63 @@ for (const [min, event] of gameEvents) {
   console.log(`[${half} HALF] ${min}: ${event}`);
 }
 */
+
+// ============== CHALLENGE #14 ==============
+/*
+
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
+The input will come from a textarea inserted into the DOM (see code below to
+insert the elements), and conversion will happen when the button is pressed.
+Test data (pasted to textarea, including spaces):
+
+underscore_case
+first_name
+Some_Variable
+calculate_AGE
+delayed_departure
+Should produce this output (5 separate console.log outputs):
+underscoreCase ✅
+firstName ✅✅
+someVariable ✅✅✅
+calculateAge ✅✅✅✅
+delayedDeparture ✅✅✅✅✅
+Hints:
+§ Remember which character defines a new line in the textarea 😉
+§ The solution only needs to work for a variable made out of 2 words, like a_b
+§ Start without worrying about the ✅. Tackle that only after you have the variable
+name conversion working 😉
+§ This challenge is difficult on purpose, so start watching the solution in case
+you're stuck. Then pause and continue!
+Afterwards, test with your own test data!
+GOOD LUCK 😀
+*/
+
+// console.log('a+very+nice+string'.split('+'));
+
+// /*
+// 👉🏼 Task-1: Split the underscore_case
+// 👉🏼 Task-2: capitalize the first letter of second element of the array.
+// 👉🏼 Task-3: Join both the elements & return it.
+// */
+
+console.log('----My Approach----');
+const camelCase = function (variables) {
+  const lowerCase = variables.toLowerCase();
+  const str = lowerCase.split('_');
+  const camelCaseUpper = [];
+  camelCaseUpper.push(str[0]);
+  camelCaseUpper.push(
+    str[str.length - 1].charAt(0).toUpperCase() + str[str.length - 1].slice(1)
+  );
+  return camelCaseUpper.join('');
+};
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+const button = document.querySelector('button');
+
+button.addEventListener('click', function () {
+  let x = document.querySelector('textarea').value;
+  console.log(camelCase(x));
+});
