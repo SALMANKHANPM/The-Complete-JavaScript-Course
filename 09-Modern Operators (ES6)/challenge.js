@@ -315,31 +315,23 @@ GOOD LUCK 😀
 */
 
 // console.log('a+very+nice+string'.split('+'));
-
-// /*
-// 👉🏼 Task-1: Split the underscore_case
-// 👉🏼 Task-2: capitalize the first letter of second element of the array.
-// 👉🏼 Task-3: Join both the elements & return it.
-// */
-
-console.log('----My Approach----');
-const camelCase = function (variables) {
-  const lowerCase = variables.toLowerCase();
-  const str = lowerCase.split('_');
-  const camelCaseUpper = [];
-  camelCaseUpper.push(str[0]);
-  camelCaseUpper.push(
-    str[str.length - 1].charAt(0).toUpperCase() + str[str.length - 1].slice(1)
-  );
-  return camelCaseUpper.join('');
-};
+/*
+console.log('----Jonas Approach----');
 
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
-const button = document.querySelector('button');
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
 
-button.addEventListener('click', function () {
-  let x = document.querySelector('textarea').value;
-  console.log(camelCase(x));
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
 });
+*/
