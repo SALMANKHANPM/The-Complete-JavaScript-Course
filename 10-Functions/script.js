@@ -91,3 +91,22 @@ const high5 = function () {
 document.body.addEventListener('click', high5);
 ['Aakash', 'Martha', 'Adam'].forEach(high5);
 */
+
+// ========= FUNCTION RETURNING OTHER FUNCTIONS:- =========
+
+/*
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+// Functions returning other function works in a way that you need to call the parameter side by side.
+greet('Hey Good Morning')('Aakash');
+
+// Functions returning other functions using Arrow FUnctions
+const greet2 = greeting => name => {
+  console.log(`${greeting} ${name}`);
+};
+greet2('Hey this is another test')('Aakash');
+*/
