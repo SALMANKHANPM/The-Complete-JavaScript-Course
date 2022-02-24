@@ -1,6 +1,6 @@
 'use strict';
 
-// =============== CODING CHALLENGE: 15
+// =============== CODING CHALLENGE: 15 ===============
 
 /*
 Let's build a simple poll app!
