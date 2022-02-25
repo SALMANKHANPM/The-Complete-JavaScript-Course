@@ -265,3 +265,20 @@ const addTaxRate = function (rate) {
 console.log(addTaxRate(0.23)(100));
 console.log(addTaxRate(0.23)(23));
 */
+
+//============ IMMEDIATELY INVOKED FUNCTION EXPRESSIONS ============
+/*
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+// IIFE
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 23;
+  console.log(isPrivate);
+})();
+
+(() => console.log('This will also never run again'))();
+*/
