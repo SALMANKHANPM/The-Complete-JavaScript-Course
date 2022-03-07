@@ -71,7 +71,7 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -113,3 +113,28 @@ console.log([...arr, ...arr2]); // concat & returns a new array but using spread
 // JOIN METHOD
 console.log(letters.join(' - '));
 */
+
+// ============ LOOPING ARRAYS FOREACH METHOD ============
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+for (const movement of movements) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+}
+
+console.log('----FOR EACH METHOD----');
+movements.forEach(function (movement) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+});
+// 0: fucntion(200)
+// 1: fucntion(450)
+// 2: fucntion(400)
+// ... until the end of the array
