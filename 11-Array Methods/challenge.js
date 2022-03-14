@@ -21,35 +21,26 @@ Hints: Use tools from all lectures in this section so far �
 GOOD LUCK �
 */
 
-/* ====== MY SOLUTION ====== */
+/* ====== JONAS SOLUTION ====== */
 
-const dogsJulia = [3, 5, 2, 12, 7];
-const dogsKate = [9, 16, 6, 8, 3];
+const checkDogs = function (dogsJulia, dogsKate) {
+  const dogsJuliaCorrected = dogsJulia.slice();
+  dogsJuliaCorrected.splice(0, 1);
+  dogsJuliaCorrected.splice(-2);
 
-const dogsJuliaNew = dogsJulia.slice();
-dogsJuliaNew.splice(0, 1);
-dogsJuliaNew.splice(-2, 2);
-console.log(dogsJuliaNew);
+  const dogs = dogsJuliaCorrected.concat(dogsKate);
+  console.log(dogs);
 
-const dogsKateNew = dogsKate.slice();
-dogsKateNew.splice(0, 1);
-dogsKateNew.splice(-2, 2);
-console.log(dogsKateNew);
+  dogs.forEach(function (dogAges, index) {
+    if (dogAges >= 3) {
+      console.log(
+        `Dog number ${index + 1} is an adult, and is ${dogAges} years old`
+      );
+    } else {
+      console.log(`Dog number ${index + 1} is still a puppy 🐶`);
+    }
+  });
+};
 
-const dogs = dogsJuliaNew.concat(dogsKateNew);
-
-dogs.forEach(function (dogAges, index) {
-  if (dogAges >= 3) {
-    console.log(
-      `Dog number ${index + 1} is ${
-        dogAges >= 3 ? 'adult' : 'puppy'
-      }, and is ${dogAges} years old`
-    );
-  } else {
-    console.log(
-      `Dog number ${index + 1} is ${
-        dogAges >= 3 ? 'adult' : 'puppy'
-      }, and is ${dogAges} years old`
-    );
-  }
-});
+checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
