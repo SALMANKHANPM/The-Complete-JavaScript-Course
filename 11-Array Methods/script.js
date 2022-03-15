@@ -90,6 +90,5 @@ const createUserNames = function (accs) {
       .join('');
   });
 };
-
 createUserNames(accounts);
 console.log(accounts);
