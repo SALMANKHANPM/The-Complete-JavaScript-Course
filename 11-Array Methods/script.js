@@ -98,4 +98,4 @@ const createUserNames = function (accs) {
   });
 };
 createUserNames(accounts);
-console.log(accounts);
+// console.log(accounts);
