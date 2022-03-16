@@ -30,8 +30,8 @@ const movementsDescriptions = movements.map(
 console.log(movementsDescriptions);
 */
 
+/*
 // THE FILTER METHOD
-
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const deposits = movements.filter(function (mov) {
@@ -47,3 +47,31 @@ console.log(depositFor);
 
 const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals);
+*/
+
+// THE REDUCE METHOD
+/*
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+console.log(movements);
+
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   console.log(`Iteration ${i}: ${acc}`);
+//   return acc + cur;
+// }, 100);
+// console.log(balance);
+
+const balance = movements.reduce((acc, cur) => acc + cur, 100);
+console.log(balance);
+
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
+
+// Finding the Maximum Value
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements[0]);
+console.log(max);
+*/
