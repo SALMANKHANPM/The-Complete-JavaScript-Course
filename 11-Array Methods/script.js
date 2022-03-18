@@ -77,42 +77,35 @@ const displayMovements = function (movements) {
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
-displayMovements(account1.movements);
 
-// CALCULATING BALANCE
+// CALCULATING BALANCE [TOP]
 const calcDisplayBalance = function (movements) {
   const balance = movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance}€`;
 };
 
-calcDisplayBalance(account1.movements);
-
-// CHAINING METHODS
-const calcDisplaySummary = function (movements) {
-  const incomes = movements
+// CHAINING METHODS {ACCOUNT SUMMARY}
+const calcDisplaySummary = function (acc) {
+  const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
-
   labelSumIn.textContent = `${incomes}€`;
 
-  const outcomes = movements
+  const outcomes = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-
   labelSumOut.textContent = `${Math.abs(outcomes)}€`;
 
-  const interest = movements
+  const interest = acc.movements
     .filter(mov => mov > 0)
-    .map(deposit => (deposit * 1.2) / 100)
+    .map(deposit => (deposit * acc.interestRate) / 100)
     .filter((int, i, arr) => {
       // console.log(arr);
       return int >= 1;
     })
     .reduce((acc, int) => acc + int, 0);
-
-  labelSumInterest.textContent = `${interest}€`;
+  labelSumInterest.textContent = `${Math.floor(interest)}€`;
 };
-calcDisplaySummary(account1.movements);
 
 // COMPUTING USERNAMES
 const createUserNames = function (accs) {
@@ -125,16 +118,39 @@ const createUserNames = function (accs) {
   });
 };
 createUserNames(accounts);
-// console.log(accounts);
 
-/*
-// ========= FIND METHOD =========
-console.log(accounts);
-const account = accounts.find(acc => acc.owner === 'Jessica Davis');
-console.log(account);
-for (const acc of accounts) {
-  if (acc.owner === 'Jessica Davis') {
-    console.log(acc);
+/* MAIN FUNCTIONALITY STARTS HERE */
+
+// EVENT HANDLERS FOR LOGIN
+let currentAccount; // For selecting current account
+btnLogin.addEventListener('click', e => {
+  // Prevent form from submitting
+  e.preventDefault();
+
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
+
+  // {?} optional chaining for if the account exists then only check for pin
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // DISPLAY UI & MESSAGE
+
+    labelWelcome.textContent = `Welcome back ${
+      currentAccount.owner.split(' ')[0]
+    }`;
+    containerApp.style.opacity = 100;
+
+    // CLEAR INPUT FIELDS AFTER LOGIN
+    inputLoginUsername.value = inputLoginPin.value = '';
+    inputLoginPin.blur();
+
+    // DISPLAY MOVEMENTS
+    displayMovements(currentAccount.movements);
+
+    // DISPLAY BALANCE
+    calcDisplayBalance(currentAccount.movements);
+
+    // DISPLAY SUMMARY
+    calcDisplaySummary(currentAccount);
   }
-}
-*/
+});
