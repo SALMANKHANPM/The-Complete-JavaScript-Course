@@ -106,3 +106,5 @@ for (const acc of accounts) {
   }
 }
 */
+
+// THE FINDINDEX METHOD
