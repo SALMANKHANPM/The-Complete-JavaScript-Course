@@ -107,4 +107,17 @@ for (const acc of accounts) {
 }
 */
 
-// THE FINDINDEX METHOD
+/*
+// THE SOME METHOD
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// ONLY CHECK FOR EQUALITY
+console.log(movements);
+console.log(movements.includes(-130));
+// WILL CHECK FOR CONDITION
+const anyDeposits = movements.some(mov => mov > 5000);
+console.log(anyDeposits);
+
+// THE EVERY METHOD
+console.log(movements.every(mov => mov > 0));
+console.log(account4.movements.every(mov => mov > 0));
+*/
