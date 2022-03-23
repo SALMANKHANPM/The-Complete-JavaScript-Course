@@ -121,3 +121,23 @@ console.log(anyDeposits);
 console.log(movements.every(mov => mov > 0));
 console.log(account4.movements.every(mov => mov > 0));
 */
+
+// THE FLAT & FLATMAP METHOD
+const nested = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(nested.flat());
+
+const nestedDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(nestedDeep.flat(2));
+
+// flat
+const overalBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance);
+
+// flatMap
+const overalBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance2);
