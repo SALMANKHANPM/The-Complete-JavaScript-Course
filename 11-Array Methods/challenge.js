@@ -136,3 +136,35 @@ const average1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 const average2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 console.log(average1, average2);
 */
+
+// =============== CODING CHALLENGE - 04 ===============
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+// TASK 1
+dogs.forEach(
+  dog => (dog.recommendedFood = Math.floor(dog.weight ** 0.75 * 28) / 1000)
+);
+console.log(dogs);
+
+// TASK 2
+// const findOwner = dogs.find(dog => {
+//   const find = dog.owners.some(owner => owner === 'Sarah');
+//   return find;
+// });
+// console.log(findOwner);
+
+const findOwner = dogs.find(dog => {
+  if (dog.owners.includes('Sarah')) return dog;
+});
+console.log(findOwner);
+
+const eating =
+  findOwner.curFood > findOwner.recommendedFood * 0.9
+    ? console.log('Eating too little')
+    : console.log('Eating too much');

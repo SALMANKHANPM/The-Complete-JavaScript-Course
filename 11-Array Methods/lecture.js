@@ -214,3 +214,5 @@ labelBalance.addEventListener('click', () => {
   console.log(movementsUI);
 });
 */
+
+// SUMMARY : WHICH ARRAY METHOD TO USE
