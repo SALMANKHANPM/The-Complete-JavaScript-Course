@@ -215,4 +215,34 @@ labelBalance.addEventListener('click', () => {
 });
 */
 
-// SUMMARY : WHICH ARRAY METHOD TO USE
+/////////////////////////////////////////////////
+//////////////////////////////////////////////
+
+// Base 10 - 0 to 9, 1/10 = 0.1  3/10 = 3.33333
+
+// Binary base 2 - 0 1
+console.log(0.1 + 0.2);
+console.log(0.1 + 0.2 === 0.3);
+
+// Converting
+console.log(Number('23'));
+console.log(+'23');
+
+// Parsing
+console.log(Number.parseInt('30px', 10));
+console.log(Number.parseInt('e34', 10));
+
+console.log(Number.parseInt('30.5px'));
+console.log(Number.parseFloat('   30.5px   '));
+
+// console.log(parseFloat('   30.5px   '));
+console.log(Number.isNaN(28));
+console.log(Number.isNaN('20'));
+console.log(Number.isNaN(+'20x'));
+console.log(Number.isNaN(23 / 0));
+
+//  Checking if a value is a number
+console.log(Number.isFinite(23));
+console.log(Number.isFinite('23'));
+console.log(Number.isFinite(+'23x'));
+console.log(Number.isFinite(23 / 0));
