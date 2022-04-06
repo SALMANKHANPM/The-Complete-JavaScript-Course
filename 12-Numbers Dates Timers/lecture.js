@@ -95,3 +95,31 @@ console.log(isEven(5));
 console.log(isEven(4));
 console.log(isEven(514));
 */
+
+// THE Bigint Data Type
+/*
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+
+console.log(49998476626266382829393073726273839n);
+console.log(BigInt(49998476626266382829393073726273839n));
+
+// Opearations
+console.log(10000n + 10000n);
+console.log(484383893847930308373636472738483363n * 10000000n);
+
+const huge = 2830029237794749827203838303n;
+const num = 23;
+console.log(huge * BigInt(num));
+
+// Exceptions
+console.log(20n > 15);
+console.log(20n === 20);
+console.log(typeof 20n);
+console.log(20n == '20');
+
+console.log(huge + ' is REALLY BIG');
+
+// Divisions
+console.log(10n / 3n);
+*/
