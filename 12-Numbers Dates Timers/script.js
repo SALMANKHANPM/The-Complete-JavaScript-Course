@@ -86,7 +86,6 @@ const formatMovementDate = function (date) {
     Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
   const daysPassed = calcdaysPassed(new Date(), date);
-  console.log(daysPassed);
 
   if (daysPassed === 0) return 'Today';
   if (daysPassed === 1) return 'Yesterday';
@@ -194,7 +193,6 @@ const options = {
   weekday: 'long',
 };
 const locale = navigator.language;
-console.log(locale);
 
 labelDate.textContent = new Intl.DateTimeFormat(locale, options).format(now);
 

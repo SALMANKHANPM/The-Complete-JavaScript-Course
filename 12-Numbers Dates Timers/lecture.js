@@ -163,6 +163,7 @@ future.setFullYear(2040);
 console.log(future);
 */
 
+/*
 // OPERATIONS WITH DATES
 const future = new Date(2037, 10, 19, 15, 23);
 console.log(+future);
@@ -172,3 +173,10 @@ const calcdaysPassed = (date1, date2) =>
 
 const day1 = calcdaysPassed(new Date(2037, 3, 34), new Date(2037, 3, 24));
 console.log(day1);
+*/
+
+const num = 3884764.23;
+
+console.log('US: ', new Intl.NumberFormat('en-US').format(num));
+console.log('Germany: ', new Intl.NumberFormat('de-DE').format(num));
+console.log('Syria: ', new Intl.NumberFormat('ar-SY').format(num));
