@@ -76,7 +76,7 @@ document
   });
 
 // ======== STYLES, ATTRIBUTES & CLASSES ========
-
+/*
 // Styles
 message.style.backgroundColor = '#37383d';
 message.style.width = '120%';
@@ -122,3 +122,39 @@ logo.classList.contains('c'); // Remember it not includes
 
 // Don't use
 logo.className = 'Aakash';
+*/
+
+// ======= IMPLEMENTING SMOOTH SCROLLING =======
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  // console.log(s1coords);
+
+  // console.log(e.target.getBoundingClientRect());
+
+  // console.log('Current Scroll (X, Y)', window.pageXOffset, pageYOffset);
+
+  // console.log(
+  //   'height/width viewport',
+  //   document.documentElement.clientHeight,
+  //   document.documentElement.clientWidth
+  // );
+
+  // Scrolling
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+
+  // FOR OLD BROWSERS
+  window.scrollTo({
+    left: s1coords.left + window.pageXOffset,
+    top: s1coords.top + window.pageYOffset,
+    behavior: 'smooth',
+  });
+
+  // FOR MORDERN BROWSERS
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
