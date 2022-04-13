@@ -33,6 +33,41 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+// ======= IMPLEMENTING SMOOTH SCROLLING =======
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  // console.log(s1coords);
+
+  // console.log(e.target.getBoundingClientRect());
+
+  // console.log('Current Scroll (X, Y)', window.pageXOffset, pageYOffset);
+
+  // console.log(
+  //   'height/width viewport',
+  //   document.documentElement.clientHeight,
+  //   document.documentElement.clientWidth
+  // );
+
+  // Scrolling
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+
+  // FOR OLD BROWSERS
+  window.scrollTo({
+    left: s1coords.left + window.pageXOffset,
+    top: s1coords.top + window.pageYOffset,
+    behavior: 'smooth',
+  });
+
+  // FOR MORDERN BROWSERS
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+
 ///////////////////////////////
 ///////////////////////////////
 ///////////////////////////////
@@ -124,37 +159,23 @@ logo.classList.contains('c'); // Remember it not includes
 logo.className = 'Aakash';
 */
 
-// ======= IMPLEMENTING SMOOTH SCROLLING =======
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
+////////////////////////////
 
-btnScrollTo.addEventListener('click', function (e) {
-  const s1coords = section1.getBoundingClientRect();
-  // console.log(s1coords);
+// ======== TYPES OF EVENTS & EVENT HANDLERS ========
+/*
+const h1 = document.querySelector('h1');
 
-  // console.log(e.target.getBoundingClientRect());
+// ALLOWS US TO ADD MULITPLE EVENTS
+// WE CAN ACTUALLY REMOVE AN EVENT IF WE DON'T WANT IT TO HAPPEN
+const alertH1 = function (e) {
+  alert('AddEventListener, Great:) You are reading the heading');
+};
 
-  // console.log('Current Scroll (X, Y)', window.pageXOffset, pageYOffset);
+h1.addEventListener('mouseenter', alertH1);
 
-  // console.log(
-  //   'height/width viewport',
-  //   document.documentElement.clientHeight,
-  //   document.documentElement.clientWidth
-  // );
+setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 5000);
 
-  // Scrolling
-  // window.scrollTo(
-  //   s1coords.left + window.pageXOffset,
-  //   s1coords.top + window.pageYOffset
-  // );
-
-  // FOR OLD BROWSERS
-  window.scrollTo({
-    left: s1coords.left + window.pageXOffset,
-    top: s1coords.top + window.pageYOffset,
-    behavior: 'smooth',
-  });
-
-  // FOR MORDERN BROWSERS
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
+// h1.onmouseenter = function (e) {
+//   alert('onmouseenter, Great:) You are reading the heading');
+// };
+*/
