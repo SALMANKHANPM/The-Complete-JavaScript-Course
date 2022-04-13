@@ -160,7 +160,6 @@ logo.className = 'Aakash';
 */
 
 ////////////////////////////
-
 // ======== TYPES OF EVENTS & EVENT HANDLERS ========
 /*
 const h1 = document.querySelector('h1');
@@ -178,4 +177,40 @@ setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 5000);
 // h1.onmouseenter = function (e) {
 //   alert('onmouseenter, Great:) You are reading the heading');
 // };
+*/
+////////////////////////////
+// ======== EVENT PROPOGATION: BUBBLING & CAPTURING ========
+/*
+// rgb(255,255,255)
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+
+// console.log(randomColor(0, 255));
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('LINK', e.target, e.currentTarget);
+  // e.target means where the event is happening
+  console.log(e.currentTarget === this);
+
+  // STOP EVENT PROPOGATION
+  // e.stopPropagation();
+});
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('CONTAINER', e.target, e.currentTarget);
+});
+
+document.querySelector('.nav').addEventListener(
+  'click',
+  function (e) {
+    this.style.backgroundColor = randomColor();
+    console.log('NAV', e.target, e.currentTarget);
+  }
+  // true --> Capturing event at capturing phase
+);
 */
