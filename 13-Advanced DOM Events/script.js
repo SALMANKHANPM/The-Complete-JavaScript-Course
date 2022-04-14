@@ -294,3 +294,5 @@ console.log(h1.parentElement.children);
   }
 });
 */
+//////////////////////////////////////
+// ======== BUILDING A TABBED COMPONENT ========
