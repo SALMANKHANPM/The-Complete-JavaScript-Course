@@ -1,4 +1,5 @@
 'use strict';
+/*
 // =================== 1. FUNCTION CONSTRUCTOR ===================
 
 // Only difference between a constructor function & normal function is just the new operator
@@ -86,3 +87,34 @@ Array.prototype.myCustomMethod = function () {
 console.log(arr.myCustomMethod());
 const h1 = document.querySelector('h1');
 console.dir(x => x + 1);
+*/
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+/*
+// ========= CODING-CHALLENGE-01 =========
+const car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+
+car.prototype.accelerate = function (speed) {
+  this.speed += 10;
+  console.log(this.speed);
+};
+
+car.prototype.brake = function (speed) {
+  this.speed -= 5;
+  console.log(this.speed);
+};
+
+const BMW = new car('BMW', 120);
+BMW.accelerate();
+BMW.brake();
+
+const Mercedes = new car('Mercedes', 95);
+Mercedes.accelerate();
+Mercedes.brake();
+
+console.table(BMW);
+*/
