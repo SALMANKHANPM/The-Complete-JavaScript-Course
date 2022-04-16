@@ -1,6 +1,6 @@
 'use strict';
 // =================== 1. FUNCTION CONSTRUCTOR ===================
-/*
+
 // Only difference between a constructor function & normal function is just the new operator
 // Constructor function always start with a capital letter
 
@@ -38,35 +38,51 @@ jonas.calcAge();
 matilda.calcAge();
 jack.calcAge();
 
-console.log(jonas.__proto__);
-console.log(jonas.__proto__ === Person.prototype);
+// console.log(jonas.__proto__);
+// console.log(jonas.__proto__ === Person.prototype);
 
-console.log(Person.prototype.isPrototypeOf(jonas));
-console.log(Person.prototype.isPrototypeOf(Person));
+// console.log(Person.prototype.isPrototypeOf(jonas));
+// console.log(Person.prototype.isPrototypeOf(Person));
 
+// __defineGetter__;
+// __defineSetter__;
+// __lookupGetter__;
+// __lookupSetter__;
+// __proto__;
 
-
-  __defineGetter__
- __defineSetter__
- __lookupGetter__
- __lookupSetter__
- __proto__
-
- city
- constructor
- greet
- hasOwnProperty
- isPrototypeOf
- propertyIsEnumerable
- toLocaleString
- toString
- toValueOf
-
-
+// city;
+// constructor;
+// greet;
+// hasOwnProperty;
+// isPrototypeOf;
+// propertyIsEnumerable;
+// toLocaleString;
+// toString;
+// toValueOf;
 
 Person.prototype.species = 'Homo Sapiens';
-console.log(jonas.species, matilda.species);
+// console.log(jonas.species, matilda.species);
 
-console.log(jonas.hasOwnProperty('firstName'));
-console.log(jonas.hasOwnProperty('species'));
-*/
+// console.log(jonas.hasOwnProperty('firstName'));
+// console.log(jonas.hasOwnProperty('species'));
+
+console.log(jonas.__proto__);
+// Object.prototype (top of the prototype chain)
+console.log(jonas.__proto__.__proto__);
+console.log(jonas.__proto__.__proto__.__proto__);
+
+console.dir(Person.prototype.constructor);
+
+const arr = [3, 5, 3, 5, 5, 2, 1]; // new Array === []
+console.log(arr.__proto__);
+console.log(arr.__proto__ === Array.prototype);
+
+console.log(arr.__proto__.__proto__);
+
+Array.prototype.myCustomMethod = function () {
+  return [...new Set(this)];
+};
+
+console.log(arr.myCustomMethod());
+const h1 = document.querySelector('h1');
+console.dir(x => x + 1);
