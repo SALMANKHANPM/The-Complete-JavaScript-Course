@@ -118,3 +118,39 @@ Mercedes.brake();
 
 console.table(BMW);
 */
+
+// =================== ES6 CLASSES ===================
+/*
+// class expression
+// const PersonCl = class {};
+
+// Class declaration
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  // Methods are added to the prototype
+  calcAge() {
+    this.age = new Date().getFullYear() - this.birthYear;
+    console.log(this.age);
+  }
+
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+}
+
+const jessica = new PersonCl('Jessica', 2003);
+console.log(jessica);
+jessica.calcAge();
+
+console.log(jessica.__proto__, PersonCl.prototype);
+console.log(jessica.__proto__ === PersonCl.prototype);
+
+// PersonCl.prototype.greet = function () {
+//   console.log(`Hey ${this.firstName}`);
+// };
+jessica.greet();
+*/
