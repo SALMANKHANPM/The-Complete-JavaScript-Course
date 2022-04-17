@@ -154,3 +154,66 @@ console.log(jessica.__proto__ === PersonCl.prototype);
 // };
 jessica.greet();
 */
+
+// =================== GETTERS & SETTERS ===================
+/*
+// IN REGULAR OBJECT
+const account = {
+  owner: 'Aakash',
+  movements: [200, -100, -300, 40],
+
+  get latestMovement() {
+    return this.movements.slice(-1).pop();
+  },
+
+  set latestMovement(value) {
+    this.movements.push(value);
+  },
+};
+
+console.log(account.latestMovement);
+account.latestMovement = 50;
+console.log(account.movements);
+
+// IN ES6 CLASSES
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  // Methods are added to the prototype
+  calcAge() {
+    this.age = new Date().getFullYear() - this.birthYear;
+    console.log(this.age);
+  }
+
+  greet() {
+    console.log(`Hey ${this.fullName}`);
+  }
+
+  get age() {
+    return new Date().getFullYear() - this.birthYear;
+  }
+
+  // Set a property that already exists
+  set fullName(name) {
+    if (name.includes(' ')) {
+      console.log(name);
+      this._fullName = name;
+    } else {
+      alert('Please enter your full name');
+    }
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+}
+
+const jessica = new PersonCl('Jessica Davis', 2003);
+console.log(jessica.age);
+
+const walter = new PersonCl('Walter White', 1975);
+console.log(walter);
+*/
