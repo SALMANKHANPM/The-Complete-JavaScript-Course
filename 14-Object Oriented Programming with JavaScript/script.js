@@ -217,3 +217,96 @@ console.log(jessica.age);
 const walter = new PersonCl('Walter White', 1975);
 console.log(walter);
 */
+
+// =================== STATIC METHODS ===================
+/*
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.hey = function () {
+  console.log('Hey there 🙏🏼');
+  console.log(this);
+};
+
+const Aakash = new Person('Aakash', 2003);
+Person.hey();
+
+
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  // Instance method: will get access to its instances
+  // Methods are added to the prototype
+  calcAge() {
+    this.age = new Date().getFullYear() - this.birthYear;
+    console.log(this.age);
+  }
+
+  greet() {
+    console.log(`Hey ${this.fullName}`);
+  }
+
+  get age() {
+    return new Date().getFullYear() - this.birthYear;
+  }
+
+  // Set a property that already exists
+  set fullName(name) {
+    if (name.includes(' ')) {
+      console.log(name);
+      this._fullName = name;
+    } else {
+      alert('Please enter your full name');
+    }
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+
+  // Static method: will only be available to the class
+  static hey() {
+    console.log('Hey there 🙏🏼');
+    console.log(this);
+  }
+}
+
+PersonCl.hey();
+*/
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+
+// ================== OBJECT.CREATE ==================
+/*
+const PersonProto = {
+  calcAge() {
+    console.log(new Date().getFullYear() - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+console.log(steven);
+steven.name = 'Steven';
+steven.birthYear = 2003;
+steven.calcAge();
+
+console.log(steven.__proto__ === PersonProto);
+console.log(steven.__proto__ === PersonProto.prototype);
+console.log(PersonProto.prototype);
+console.log(steven.__proto__);
+console.log(steven.__proto__.__proto__);
+
+const Sarah = Object.create(PersonProto);
+Sarah.init('Sarah', 2000);
+Sarah.calcAge();
+*/
