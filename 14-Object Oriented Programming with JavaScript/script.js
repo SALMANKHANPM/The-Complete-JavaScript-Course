@@ -334,7 +334,7 @@ Test data:
 
 GOOD LUCK 😀
 
-*/
+
 
 class Carcl {
   constructor(make, speed) {
@@ -355,3 +355,45 @@ const BMW = new Carcl('BMW', 120);
 console.log(BMW);
 
 console.log(BMW.speedUS);
+*/
+
+// ================== INHERITANCE BETWEEN CLASSES: CONSTRUCTOR FUNCTIONS ==================
+/*
+{things we learned here: setting call method() , using Object.create() as a filling gap for inheritance }
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(new Date().getFullYear() - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+console.log(Student.prototype);
+
+// Linking prototypes
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I am studying ${this.course}`);
+};
+
+const mike = new Student('Mike', 1990, 'CS');
+mike.introduce();
+mike.calcAge();
+
+console.log(mike.__proto__);
+console.log(mike.__proto__.__proto__);
+
+console.log(mike instanceof Student);
+console.log(mike instanceof Person);
+
+console.dir(Student.prototype.constructor);
+Student.prototype.constructor = Student;
+*/
