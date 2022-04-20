@@ -521,3 +521,36 @@ const Aakash = new StudentCl('Aakash Rao', 2003, 'CS');
 Aakash.introduce();
 Aakash.calcAge();
 */
+
+// ========== INHERITANCE BETWEEN CLASSES: OBJECT.CREATE() ==================
+
+/*
+const PersonProto = {
+  calcAge: function () {
+    console.log(new Date().getFullYear() - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+
+const StudentProto = Object.create(PersonProto);
+const jay = Object.create(StudentProto);
+
+StudentProto.init = function (firstName, birthYear, course) {
+  PersonProto.init.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+StudentProto.introduce = function () {
+  console.log(`My name is ${this.firstName} and I am studying ${this.course}`);
+};
+
+jay.init('Jay', 2003, 'CS');
+jay.introduce();
+jay.calcAge();
+*/
