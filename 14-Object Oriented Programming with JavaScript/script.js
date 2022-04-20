@@ -554,3 +554,52 @@ jay.init('Jay', 2003, 'CS');
 jay.introduce();
 jay.calcAge();
 */
+
+// ============ ANOTHER CLASS EXAMPLE ==================
+
+/*
+{What we learned here -> How to push an array of value as an arugular parameter to a class & intro concern about data encapsulation}
+class Account {
+  constructor(owner, currency, pin, movements) {
+    this.owner = owner;
+    this.currency = currency;
+    this.pin = pin;
+    this.movements = movements;
+    this.locale = navigator.language;
+
+    console.log(`Thanks for opening an account with us, ${this.owner} :)`);
+  }
+
+  // PUBLIC INTERFACE
+  deposit(val) {
+    this.movements.push(val);
+  }
+
+  withdraw(val) {
+    this.deposit(-val);
+  }
+
+  approveLoan(val) {
+    return true;
+  }
+
+  requestLoan(val) {
+    if (this.approveLoan(val)) {
+      this.deposit(val);
+      console.log(`Your loan has been approved!`);
+    }
+  }
+}
+
+const acc1 = new Account('Jonas', 'EUR', 1234, []);
+
+// acc1.movements.push(250);
+// acc1.movements.push(-140);
+
+acc1.deposit(250);
+acc1.withdraw(-140);
+console.log(acc1);
+acc1.requestLoan(10000);
+
+console.log(acc1.pin);
+*/
