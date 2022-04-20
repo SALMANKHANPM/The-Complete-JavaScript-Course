@@ -449,3 +449,75 @@ const Tesla = new EV('Tesla', 120, 23);
 Tesla.accerlerate();
 Tesla.chargeBattery(90);
 */
+
+// =========== INHERITANCE BETWEEN CLASSES: ES6 CLASSES ==================
+
+/*
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  // Instance method: will get access to its instances
+  // Methods are added to the prototype
+  calcAge() {
+    console.log(2022 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.fullName}`);
+  }
+
+  get age() {
+    return new Date().getFullYear() - this.birthYear;
+  }
+
+  // Set a property that already exists
+  set fullName(name) {
+    if (name.includes(' ')) {
+      console.log(name);
+      this._fullName = name;
+    } else {
+      alert('Please enter your full name');
+    }
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+
+  // Static method: will only be available to the class
+  static hey() {
+    console.log('Hey there 🙏🏼');
+    console.log(this);
+  }
+}
+
+class StudentCl extends PersonCl {
+  constructor(fullName, birthYear, course) {
+    // Always needs to happen first - Responsible for creating the this keyword in this subclass
+    super(fullName, birthYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(`My name is ${this.fullName} and I am studying ${this.course}`);
+  }
+
+  // Overriding the parent method
+  calcAge() {
+    console.log(
+      `I'm ${
+        2022 - this.birthYear
+      } years old but as a student I feel like more ${
+        2022 - this.birthYear + 10
+      }`
+    );
+  }
+}
+
+const Aakash = new StudentCl('Aakash Rao', 2003, 'CS');
+Aakash.introduce();
+Aakash.calcAge();
+*/
