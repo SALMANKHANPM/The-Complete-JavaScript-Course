@@ -737,3 +737,70 @@ acc2.requestLoan(10000);
 
 Account.helper;
 */
+
+// =============== CHAINING METHODS: METHODS IN ES6 CLASSES =====================
+/*
+class Account {
+  // 1) Public fields (instances)
+  locale = navigator.language;
+  // _movements = [];
+
+  // 2) Private fields (instances)
+  #movements = [];
+  #pin;
+
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    // PROTECTED PROPERTY
+    this.#pin = pin;
+    // this._movements = [];
+    // this.locale = navigator.language;
+
+    console.log(`Thanks for opening an account with us, ${this.owner} :)`);
+  }
+
+  // PUBLIC INTERFACE
+  getMovements() {
+    return this.#movements;
+  }
+
+  deposit(val) {
+    this.#movements.push(val);
+    return this;
+  }
+
+  withdraw(val) {
+    this.deposit(-val);
+    return this;
+  }
+
+  _approveLoan(val) {
+    return true;
+  }
+
+  // 4) Private methods
+  // #approveLoan(val) {
+  //   return true;
+  // }
+
+  requestLoan(val) {
+    if (this._approveLoan(val)) {
+      this.deposit(val);
+      console.log(`Your loan has been approved!`);
+      return this;
+    }
+  }
+
+  static helper() {
+    console.log('This is a static method');
+  }
+}
+
+const acc1 = new Account('Aakash', 'EUR', 1234, []);
+
+// chaining
+acc1.deposit(250).deposit(350).deposit(450).requestLoan(2400).withdraw(4000);
+
+console.log(acc1.getMovements());
+*/
