@@ -659,3 +659,81 @@ console.log(acc1._pin);
 
 console.log(acc1.getMovements());
 */
+
+// ============ ENCAPSULATION: PRIVATE CLASS FIELDS & METHODS =====================
+
+/*
+  1. Public fields
+  2. Private fields
+  3. Public methods
+  4. Private methods
+  (there is also static version)
+
+
+class Account {
+  // 1) Public fields (instances)
+  locale = navigator.language;
+  // _movements = [];
+
+  // 2) Private fields (instances)
+  #movements = [];
+  #pin;
+
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    // PROTECTED PROPERTY
+    this.#pin = pin;
+    // this._movements = [];
+    // this.locale = navigator.language;
+
+    console.log(`Thanks for opening an account with us, ${this.owner} :)`);
+  }
+
+  // PUBLIC INTERFACE
+
+  getMovements() {
+    return this.#movements;
+  }
+
+  deposit(val) {
+    this.#movements.push(val);
+  }
+
+  withdraw(val) {
+    this.deposit(-val);
+  }
+
+  _approveLoan(val) {
+    return true;
+  }
+
+  // 4) Private methods
+  // #approveLoan(val) {
+  //   return true;
+  // }
+
+  requestLoan(val) {
+    if (this._approveLoan(val)) {
+      this.deposit(val);
+      console.log(`Your loan has been approved!`);
+    }
+  }
+
+  static helper() {
+    console.log('This is a static method');
+  }
+}
+
+const acc2 = new Account('Jay', 'EUR', 1234, []);
+console.log(acc2);
+
+acc2.deposit(250);
+acc2.withdraw(-140);
+acc2.requestLoan(10000);
+
+// console.log(acc2.#movements);
+// console.log(acc2.#approveLoan(10000)); // Chrome sees it as private field but not as a private method in class
+
+Account.helper;
+*/
