@@ -8,6 +8,9 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
+//  Top menu Navigation
+const nav = document.querySelector('.nav');
+
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -109,6 +112,26 @@ tabsContainer.addEventListener('click', function (e) {
     .querySelector(`.operations__content--${clicked.dataset.tab}`)
     .classList.add('operations__content--active');
 });
+
+// Menu fade Animation
+
+const handleHover = function (e) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+
+    logo.style.opacity = this;
+  }
+};
+
+// Passing an 'argument' to an event handler
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+nav.addEventListener('mouseout', handleHover.bind(1));
 
 ///////////////////////////////
 ///////////////////////////////
@@ -321,3 +344,39 @@ console.log(h1.parentElement.children);
 });
 */
 //////////////////////////////////////
+// =========== PASSING ARGUMENTS TO EVENT HANDLERS ===========
+
+// Menu fade Animation
+
+// const handleHover = function (e) {
+//   if (e.target.classList.contains('nav__link')) {
+//     const link = e.target;
+//     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+//     const logo = link.closest('.nav').querySelector('img');
+
+//     siblings.forEach(el => {
+//       if (el !== link) el.style.opacity = this;
+//     });
+
+//     logo.style.opacity = this;
+//   }
+// };
+
+// // Passing an 'argument' to an event handler
+// nav.addEventListener('mouseover', handleHover.bind(0.5));
+// nav.addEventListener('mouseout', handleHover.bind(1));
+
+// =========== IMPLEMENTING A STICKY NAVIGATION: THE SCROLL EVENT ===========
+
+// Sticky Navigation
+
+// 1) THE BAD WAY
+// const initialCords = section1.getBoundingClientRect();
+// console.log(initialCords);
+
+// window.addEventListener('scroll', function (e) {
+//   if (window.scrollY > initialCords.top) nav.classList.add('sticky');
+//   else nav.classList.remove('sticky');
+// });
+
+// 2) THE BETTER WAY: Intersection Observer API
