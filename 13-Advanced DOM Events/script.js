@@ -380,3 +380,12 @@ console.log(h1.parentElement.children);
 // });
 
 // 2) THE BETTER WAY: Intersection Observer API
+
+const obsCallback = function () {};
+
+const obsOptions = {
+  root: null,
+};
+
+const observer = new IntersectionObserver(obsCallback, obsOptions);
+observer.observe(section1);
