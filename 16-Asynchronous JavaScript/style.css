@@ -14,6 +14,7 @@ body {
   color: #555;
   background-color: #f7f7f7;
   min-height: 100vh;
+  padding: 6rem 0;
 
   display: flex;
   align-items: center;
@@ -29,6 +30,8 @@ body {
 .countries {
   /* margin-bottom: 8rem; */
   display: flex;
+  flex-wrap: wrap;
+  gap: 6rem;
 
   font-size: 2rem;
   opacity: 0;
