@@ -192,12 +192,14 @@ const getJSON = function (url, errorMsg = 'Something went wrong') {
 //     });
 // };
 
+/*
 const getCountryData = function (country) {
   // Country 1
   getJSON(`https://restcountries.com/v3.1/name/${country}`, 'Country not found')
-    .then(data => {
-      renderCountry(data[0]);
-      const neighbour = data.borders;
+    .then(([data]) => {
+      renderCountry(data);
+      const [neighbour] = data.borders;
+      console.log(neighbour);
       if (!neighbour) throw new Error('No neighbour found!');
       // Country 2
       return getJSON(
@@ -205,7 +207,7 @@ const getCountryData = function (country) {
         'Country not found'
       );
     })
-    .then(data => renderCountry(data, 'neighbour'))
+    .then(([data]) => renderCountry(data, 'neighbour'))
     .catch(err => {
       console.error(`${err} 💥💥💥`);
       renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);
@@ -219,4 +221,29 @@ btn.addEventListener('click', function () {
   getCountryData('portugal');
 });
 
-getCountryData('australia');
+// =================== CODING CHALLENGE-01 ===================
+
+const whereAmI = function (lat, lng) {
+  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(
+          `Failed to fetch, please reload the page (${response.status})`
+        );
+      }
+      return response.json();
+    })
+    .then(data => {
+      const country = data.country;
+      const city = data.city;
+      getCountryData(country);
+      console.log(`You are in ${city}, ${country}`);
+    })
+    .catch(err => {
+      renderError(`Something went wrong 💥💥 ${err.msg}. Try again!`);
+      console.log(`${err} 💥💥💥`);
+    });
+};
+
+whereAmI(-33.933, 18.474);
+*/
