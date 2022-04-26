@@ -39,6 +39,11 @@ const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////////////////
 
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  // countriesContainer.style.opacity = 1;
+};
+
 const renderCountry = (data, className = '') => {
   const html = `
   <article class="country ${className}">
@@ -59,7 +64,7 @@ const renderCountry = (data, className = '') => {
   </article>
   `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
-  countriesContainer.style.opacity = 1;
+  // countriesContainer.style.opacity = 1;
 };
 /*
 const getCountryAndNeighbour = function (country) {
@@ -137,3 +142,40 @@ const getCoutryData = function (country) {
 
 getCoutryData('usa');
 */
+
+// =================== CHAINING PROMISES ===================
+
+const getCoutryData = function (country) {
+  // Country
+  fetch(`https://restcountries.com/v3.1/name/${country}`)
+    .then(response => response.json())
+    .then(([data]) => {
+      renderCountry(data);
+
+      // Neighbour
+      const [neighbour] = data.borders;
+      console.log(neighbour);
+
+      if (!neighbour) return;
+      return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+    })
+    .then(response => response.json())
+    .then(([data]) => {
+      // renderCountry(data, 'neighbour');
+    })
+    .catch(error => {
+      console.error(`${error} 💥💥💥`);
+      renderError(`Something went wrong 💥💥💥 ${error.message}. Try again!`);
+    })
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    });
+};
+
+// =================== HANDLING REJECTED PROMISES ===================
+
+btn.addEventListener('click', function () {
+  getCoutryData('portugal');
+});
+
+getCoutryData('sdjdjkdhdh');
