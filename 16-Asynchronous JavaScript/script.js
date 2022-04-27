@@ -531,3 +531,26 @@ console.log('1: Will get location');
   console.log('3: Finished getting location');
 })();
 */
+
+// =================== RUNNING PROMISES IN PARALLEL  ===================
+/*
+const getThreeCountries = async function (c1, c2, c3) {
+  try {
+    // const [data1] = await getJSON(`https://restcountries.com/v3.1/name/${c1}`);
+    // const [data2] = await getJSON(`https://restcountries.com/v3.1/name/${c2}`);
+    // const [data3] = await getJSON(`https://restcountries.com/v3.1/name/${c3}`);
+
+    const data = await Promise.all([
+      getJSON(`https://restcountries.com/v3.1/name/${c1}`),
+      getJSON(`https://restcountries.com/v3.1/name/${c2}`),
+      getJSON(`https://restcountries.com/v3.1/name/${c3}`),
+    ]);
+
+    console.log(data.map(([d]) => d.capital[0]));
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+getThreeCountries('portugal', 'canada', 'tanzania');
+*/
